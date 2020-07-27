@@ -1,10 +1,67 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Personal Profile</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+
 <body>
-    
+    <div class="page" id='page'>
+
+        <!-- welcome animation -->
+        <section class="welcome-animation" id='welcome-animation'>
+            <h1 class="welcome-animation__title" id="welcome-btn"><span>Welcome</span></h1>
+            <ul class="welcome-animation__box-area">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+
+            </ul>
+        </section>
+
+        <!-- Main Page -->
+        <section class='main' id='main'>
+            <img src="./src/background_1.3_horizontal.png" id='main-background-image'>
+
+            <!-- Navigation -->
+            <section class="main__navigation" id="navigation">
+                 <!-- Navigation for samll screen-->
+                <div class="main__navigation__menu" id="navigation-button">
+                    <div class="main__navigation__menu__line"></div>
+                </div>
+                <div class="main__navigation__overlay"></div>
+                <!-- Navigation for big screen-->
+                <nav>
+                    <a herf="#" class="main__navigation__title" id="navigation-title">Profile</a>
+                    <ul>
+                        <li class="main__navigation__item">
+                            <a href="#" class="main__navigation__link" data-text="Home">Home</a>
+                        </li>
+                        <li class="main__navigation__item">
+                            <a href="#" class="main__navigation__link" data-text="Resume">Resume</a>
+                        </li>
+                        <li class="main__navigation__item">
+                            <a href="#" class="main__navigation__link" data-text="Skills">Skills</a>
+                        </li>
+                        <li class="main__navigation__item">
+                            <a href="#" class="main__navigation__link" data-text="Contact">Contact</a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </section>
+            <!-- Navigation -->
+        </section>
+    </div>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
+
 </html>
