@@ -9,6 +9,7 @@ const navigation=document.getElementById('navigation');
 const navigation_button=document.getElementById('navigation-button');
 const navigation_title=document.getElementById('navigation-title');
 const navigation_items=document.getElementsByClassName('main__navigation__item');
+const navigation_links=document.getElementsByClassName('main__navigation__link');
 window.onresize=setBackground;
 //window.addEventListener('resize', setBackground());
 // set background image
@@ -58,7 +59,7 @@ window.onload = function () {
          setTimeout(() => {
             welcome_animation.style.display = 'none';
             main.style.animation = "fade-in 1s 1";
-            main_background_image.style.animation= "backgoundFilter 5s infinite";
+            main_background_image.style.animation= "backgound-filter 5s infinite";
             main.style.display = 'block';
             navigation_button.style.display='block';
          }, 1000);
@@ -72,15 +73,15 @@ window.onload = function () {
    };
 
    navigation_title.onclick=function(){
+      navigation_title.innerHTML="PROFILE";
       for(let i=0;i<4;i++){
-         navigation_items[i].style.animation="navigationItemDown 1s";
+         navigation_items[i].style.animation="navigation-item-down 1s";
       }   
    }
 
    for(let i=0;i<4;i++){
-      navigation_items[i].onclick=function(){
-
-        // alert(i);
+      navigation_links[i].onclick=function(){
+         navigation_title.innerHTML=navigation_links[i].innerHTML;
       }
    }
    
