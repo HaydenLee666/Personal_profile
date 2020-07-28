@@ -11,7 +11,8 @@ const navigation_title=document.getElementById('navigation-title');
 const navigation_items=document.getElementsByClassName('main__navigation__item');
 const navigation_links=document.getElementsByClassName('main__navigation__link');
 window.onresize=setBackground;
-//window.addEventListener('resize', setBackground());
+var pageSwitch = require('pageswitch');
+
 // set background image
 function setBackground() {
    let DEVICE_RATIO = window.innerWidth / window.innerHeight;
