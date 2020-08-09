@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class="page" id='page'>
+    <div>
 
         <!-- welcome animation -->
         <section class="welcome-animation" id='welcome-animation'>
@@ -31,7 +31,7 @@
 
             <!-- Navigation -->
             <section class="main__navigation" id="navigation">
-                 <!-- Navigation for samll screen-->
+                <!-- Navigation for samll screen-->
                 <div class="main__navigation__menu" id="navigation-button">
                     <div class="main__navigation__menu__line"></div>
                 </div>
@@ -41,16 +41,16 @@
                     <span class="main__navigation__title" id="navigation-title">Profile</span>
                     <ul>
                         <li class="main__navigation__item">
-                            <span  class="main__navigation__link" data-text="Home">Home</span>
+                            <span class="main__navigation__link" data-text="Home">Home</span>
                         </li>
                         <li class="main__navigation__item">
-                            <span  class="main__navigation__link" data-text="Resume">Resume</span>
+                            <span class="main__navigation__link" data-text="Resume">Resume</span>
                         </li>
                         <li class="main__navigation__item">
                             <span class="main__navigation__link" data-text="Skills">Skills</span>
                         </li>
                         <li class="main__navigation__item">
-                            <span  class="main__navigation__link" data-text="Contact">Contact</span>
+                            <span class="main__navigation__link" data-text="Contact">Contact</span>
                         </li>
 
                     </ul>
@@ -58,26 +58,65 @@
                 </nav>
 
             </section>
-           
-            <!-- Home page -->
-            <section class='home' id='home-page'>
+            <!-- Pages -->
+            <section id='pagesContianer'>
+                <section class='pages' id='pages'>
+                    <!-- Home page -->
+                    <section class='home' id='home-page'>
+                        <div class="home__header">
+                            <div class="home__header__photo">
+                                <img src="./src/photo.jpg" alt>
+                            </div>
+                            <div class="home__header__text">
+                                <div class="home__header__text__name">
+                                    <span>M</span>
+                                    <span>i</span>
+                                    <span>n</span>
+                                    <span>x</span>
+                                    <span>i</span>
+                                    <span>n</span>
+                                    <span>g</span>&nbsp;&nbsp;
+                                    <span>L</span>
+                                    <span>i</span>
+                                </div>
+                                <div class="home__header__text__position">
+                                    <h3>
+                                        Call me
+                                        <span class="home__header__text__position__type" id='home-text-type'
+                                            data-wait='3000'
+                                            data-words='["Hayden","Front End Developer","Full Stack Developer"]'>
+                                        </span>
+                                    </h3>
+                                </div>
+                                <div class="home__header__text__social">
+                                    <i class="fab fa-facebook-square"></i>                                 
+                                </div>
 
-            </section>
-            <!-- Resume page -->
-            <section class='resume' id='resume-page'>
+                            </div>
+                        </div>
+                        <div class="home__content">
 
-            </section>
-            <!-- Skills page -->
-            <section class='skills' id='skills-page'>
+                        </div>
 
-            </section>
-            <!-- Contact page -->
-            <section class='contact' id='contact-page'>
+                    </section>
+                    <!-- Resume page -->
+                    <section class='resume' id='resume-page'>
 
+                    </section>
+                    <!-- Skills page -->
+                    <section class='skills' id='skills-page'>
+
+                    </section>
+                    <!-- Contact page -->
+                    <section class='contact' id='contact-page'>
+
+                    </section>
+                </section>
             </section>
         </section>
     </div>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/pageSwitch.js"></script>
 </body>
 
 </html>
