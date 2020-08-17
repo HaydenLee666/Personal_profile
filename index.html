@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Profile</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="src/css/all.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
@@ -50,6 +51,9 @@
                             <span class="main__navigation__link" data-text="Skills">Skills</span>
                         </li>
                         <li class="main__navigation__item">
+                            <span class="main__navigation__link" data-text="Blog">Blog</span>
+                        </li>
+                        <li class="main__navigation__item">
                             <span class="main__navigation__link" data-text="Contact">Contact</span>
                         </li>
 
@@ -89,29 +93,156 @@
                                     </h3>
                                 </div>
                                 <div class="home__header__text__social">
-                                    <i class="fab fa-facebook-square"></i>                                 
+                                    <a href='about:blank' target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href='about:blank' target="_blank"><i class="fab fa-github-square"></i></a>
+                                    <a href='about:blank' target="_blank"><i class="fab fa-facebook-square"></i></a>
+                                    <a href='about:blank' target="_blank"><i class="fab fa-instagram-square"></i></a>
                                 </div>
 
                             </div>
                         </div>
                         <div class="home__content">
-
+                            <div class="home__content__attachment">
+                                <h3>ATTACHMENTS</h3>
+                                <button>
+                                    <a href='about:blank' target="_blank" class="home__content__attachment__file">
+                                        <i class="far fa-file-pdf"></i>
+                                        <span>Minxing-Li.pdf</span>
+                                    </a>
+                                </button>
+                                <button id="doc-file">
+                                    <a href='about:blank' target="_blank" class="home__content__attachment__file">
+                                        <i class="far fa-file-word"></i>
+                                        <span>Minxing-Li.doc</span>
+                                    </a>
+                                </button>
+                            </div>
+                            <div class="home__content__description">
+                                <div class="home__content__description__container">
+                                    <span class="home__content__description__left">Age</span>
+                                    <span class="home__content__description__right">25</span>
+                                </div>
+                                <div class="home__content__description__container">
+                                    <span class="home__content__description__left">Location</span>
+                                    <span class="home__content__description__right">Sydney, Australia</span>
+                                </div>
+                                <div class="home__content__description__container">
+                                    <span class="home__content__description__left">E-mail</span>
+                                    <span class="home__content__description__right">haydenlee6677@gmail.com</span>
+                                </div>
+                                <div class="home__content__description__container">
+                                    <span class="home__content__description__left">Phone</span>
+                                    <span class="home__content__description__right">0426 908 625</span>
+                                </div>
+                                <div class="home__content__description__container">
+                                    <span class="home__content__description__left">Status</span>
+                                    <span class="home__content__description__right">Available</span>
+                                </div>
+                            </div>
                         </div>
 
                     </section>
                     <!-- Resume page -->
                     <section class='resume' id='resume-page'>
-
+                        <div class="resume__title"><span>Resume</span></div>
+                        <div class='resume__content'>
+                            <div class='resume__container'>
+                                <div class='resume__container__title'>
+                                    <h3>Education</h3>
+                                </div>
+                                <div class="resume__timeline">
+                                    <div class="resume__timeline__item">
+                                        <h4 class="resume__timeline__item__name">Bachelor of Computer Science</h4>
+                                        <span class="resume__timeline__item__time">2014-2017</span>
+                                        <span class="resume__timeline__item__place">HIT, China</span>
+                                        <p class="resume__timeline__item__description">Database, Data structure,
+                                            Algorithm, Computer Network, C, C++ and Java programing language.</p>
+                                    </div>
+                                    <div class="resume__timeline__item">
+                                        <h4 class="resume__timeline__item__name">Master of IT</h4>
+                                        <span class="resume__timeline__item__time">2018-2019</span>
+                                        <span class="resume__timeline__item__place">Usyd, Australia</span>
+                                        <p class="resume__timeline__item__description">Major in software engineering,
+                                            Cloud computing, Data analystic, Android, Spring MVC and Express.js
+                                            programing.</p>
+                                    </div>
+                                    <div class="resume__timeline__item">
+                                        <h4 class="resume__timeline__item__name">Master of IT Management</h4>
+                                        <span class="resume__timeline__item__time">2018-2019</span>
+                                        <span class="resume__timeline__item__place">Usyd, Australia</span>
+                                        <p class="resume__timeline__item__description">Project management, Change
+                                            management and Service science management.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='resume__container'>
+                                <div class='resume__container__title'>
+                                    <h3>Experience</h3>
+                                </div>
+                                <div class="resume__timeline">
+                                    <div class="resume__timeline__item">
+                                        <h4 class="resume__timeline__item__name">123</h4>
+                                        <span class="resume__timeline__item__time">456</span>
+                                        <span class="resume__timeline__item__place">789</span>
+                                        <p class="resume__timeline__item__description">Mauris magna sapien, pharetra
+                                            consectetur fringilla vitae, interdum sed tortor.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </section>
                     <!-- Skills page -->
                     <section class='skills' id='skills-page'>
 
+                        <div class="skills__title"><span>Skills</span></div>
+                        <div class="skills__content">
+                            <div class='skills__heading'>My <span>Services</span></div>
+                            <div class="skills__container">
+                                <div class="skills__service">
+                                    <div class="skills__service__image">
+                                        <img src="src/skills_pic1.png" alt="/">
+                                    </div>
+                                    <h4 class="skills__service__name">Front End</h4>
+                                    <p class="skills__service__description">HTML5, CSS3, SASS, Boostrap, JavaScript(ES6), JQuery, React.js, Redux.js.</p>
+                                </div>
+                                <div class="skills__service">
+                                    <div class="skills__service__image">
+                                        <img src="src/skills_pic2.png" alt="/">
+                                    </div>
+                                    <h4 class="skills__service__name">Back End</h4>
+                                    <p class="skills__service__description">Node.js, Koa.js, Express.js, Spring MVC, RESTful API, Postman, Swagger.</p>
+                                </div>
+                                <div class="skills__service">
+                                    <div class="skills__service__image">
+                                        <img src="src/skills_pic3.png" alt="/">
+                                    </div>
+                                    <h4 class="skills__service__name">Teamwork</h4>
+                                    <p class="skills__service__description">GitHub, Jira, BitBucket, Slack, Agile, Scrum, SourceTree.</p>
+                                </div>
+                                <div class="skills__service">
+                                    <div class="skills__service__image">
+                                        <img src="src/skills_pic4.png" alt="/">
+                                    </div>
+                                    <h4 class="skills__service__name">Ability</h4>
+                                    <p class="skills__service__description">Customer-oriented, Passionate about leaning new things, insist on high standrad, Good time management, Calm down and Think big.</p>
+                                </div>
+                            </div>
+                            <div class='skills__heading'>Coding <span>Skills</span></div>
+                        </div>
+                    </section>
+                    <!-- Skills page -->
+                    <section class='blog' id='blog-page'>
+                        <div class="blog__title"><span>Coming soon</span></div>
                     </section>
                     <!-- Contact page -->
                     <section class='contact' id='contact-page'>
-
+                        <div class="contact__title"><span>Contact</span></div>
                     </section>
                 </section>
+                <section class="footer" id='footer'>
+                    <span>© 2020 All Right Reserved. Created By Minxing Li</span>
+                </section>
+
             </section>
         </section>
     </div>

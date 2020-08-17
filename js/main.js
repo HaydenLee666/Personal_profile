@@ -38,7 +38,7 @@ function setBackground() {
 }
 
 function reSetNavigationItem(){
-   for(let i=0;i<4;i++){
+   for(let i=0;i<5;i++){
       navigation_items[i].addEventListener("animationend",function(){
          this.style.animation='';
       });
@@ -87,46 +87,7 @@ class typeWriter{
       setTimeout(()=>{this.type()},typespeed);
    }
 }
-// const typeWriter=function(txtElement,words,wait=3000){
-//    this.txtElement=txtElement;
-//    this.words=words;
-//    this.txt='';
-//    this.wordIndex=0;
-//    this.wait=parseInt(wait,10);
-//    this.type();
-//    this.isDeleting=false;
-// }
 
-// typeWriter.prototype.type=function(){
-//    const current=this.wordIndex%this.words.length;
-//    const fullTxt=this.words[current];
-//   if(this.isDeleting){
-//    this.txt=fullTxt.substring(0,this.txt.length-1);
-//   }else{
-//    this.txt=fullTxt.substring(0,this.txt.length+1);
-//   }
-//   this.txtElement.innerHTML=`<span class='home__header__text__position__txt'>${this.txt}</span>`;
-//   //typing speed
-//   let typespeed=150;
-
-//   if(this.isDeleting){
-//      //deleting speed
-//      typespeed=50;
-//   }
-//   if(!this.isDeleting&& this.txt===fullTxt){
-//      //make pause at the end
-//      typespeed=this.wait;
-//      this.isDeleting=true;
-
-//   }else if(this.isDeleting&&this.txt===''){
-//      this.isDeleting=false;
-//      //move to next word
-//      this.wordIndex++;
-//      //pause before start typing
-//      typespeed=500;
-//   }
-//    setTimeout(()=>{this.type()},typespeed);
-// }
 
 function initTypingEffect(){
    const txtElement=document.getElementById('home-text-type');
@@ -143,15 +104,15 @@ window.onload = function () {
    reSetNavigationItem();
    const pw = new pageSwitch('pages',{
       duration: 600, //int 页面过渡时间
-      direction: 1, //int 页面切换方向，0横向，1纵向
+      direction: 0, //int 页面切换方向，0横向，1纵向
       start: 0, //int 默认显示页面
       loop: false, //bool 是否循环切换
-      ease: 'ease', //string|function 过渡曲线动画，详见下方说明
-      transition: 'slide', //string|function转场方式，详见下方说明
+      ease: 'ease-out', //string|function 过渡曲线动画，详见下方说明
+      transition: 'flip3d', //string|function转场方式，详见下方说明
       freeze: false, //bool 是否冻结页面（冻结后不可响应用户操作，可以通过 `.freeze(false)` 方法来解冻）
       mouse: true, //bool 是否启用鼠标拖拽
-      mousewheel: false, //bool 是否启用鼠标滚轮切换
-      arrowkey: false, //bool 是否启用键盘方向切换
+      mousewheel: true, //bool 是否启用鼠标滚轮切换
+      arrowkey: true, //bool 是否启用键盘方向切换
       autoplay: false, //bool 是否自动播放幻灯 新增
       interval: 1 //bool 幻灯播放时间间隔 新增
    });
@@ -181,15 +142,16 @@ window.onload = function () {
    //profile button animation
    navigation_title.onclick=function(){
       navigation_title.innerHTML="PROFILE";
-      for(let i=0;i<4;i++){
+      for(let i=0;i<5;i++){
          navigation_items[i].style.animation="navigation-item-down 1s";
       }   
-      pw.next();
+      pw.slide(0);
    }
    //menu item button effect
-   for(let i=0;i<4;i++){
+   for(let i=0;i<5;i++){
       navigation_links[i].onclick=function(){
          navigation_title.innerHTML=navigation_links[i].innerHTML;
+         pw.slide(i);
       }
    }
    //position text
