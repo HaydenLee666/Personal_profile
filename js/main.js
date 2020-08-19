@@ -11,6 +11,12 @@ const navigation_title=document.getElementById('navigation-title');
 const navigation_items=document.getElementsByClassName('main__navigation__item');
 const navigation_links=document.getElementsByClassName('main__navigation__link');
 const pages=document.getElementById('pages');
+const skill_bar_1=document.getElementById('skill-bar-1');
+const skill_bar_2=document.getElementById('skill-bar-2');
+const skill_bar_3=document.getElementById('skill-bar-3');
+const skill_bar_4=document.getElementById('skill-bar-4');
+const skill_bar_5=document.getElementById('skill-bar-5');
+const skill_bar_6=document.getElementById('skill-bar-6');
 window.onresize=setBackground;
 
 
@@ -152,6 +158,22 @@ window.onload = function () {
       navigation_links[i].onclick=function(){
          navigation_title.innerHTML=navigation_links[i].innerHTML;
          pw.slide(i);
+         //skill bars effect
+         if(i===2){
+            skill_bar_1.style.width="95%";
+            skill_bar_2.style.width="70%";
+            skill_bar_3.style.width="75%";
+            skill_bar_4.style.width="80%";
+            skill_bar_5.style.width="60%";
+            skill_bar_6.style.width="85%";
+         }else{
+            skill_bar_1.style.width="0";
+            skill_bar_2.style.width="0";
+            skill_bar_3.style.width="0";
+            skill_bar_4.style.width="0";
+            skill_bar_5.style.width="0";
+            skill_bar_6.style.width="0";
+         }
       }
    }
    //position text
