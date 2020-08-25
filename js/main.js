@@ -17,6 +17,12 @@ const skill_bar_3=document.getElementById('skill-bar-3');
 const skill_bar_4=document.getElementById('skill-bar-4');
 const skill_bar_5=document.getElementById('skill-bar-5');
 const skill_bar_6=document.getElementById('skill-bar-6');
+const form_name=document.getElementById('form-name');
+const form_name_label=document.getElementById('form-name-label');
+const form_email=document.getElementById('form-email');
+const form_email_label=document.getElementById('form-email-label');
+const form_message=document.getElementById('form-message');
+const form_message_label=document.getElementById('form-message-label');
 window.onresize=setBackground;
 
 
@@ -102,6 +108,13 @@ function initTypingEffect(){
    new typeWriter(txtElement,words,wait);
 }
 
+//google map
+function initMap() {
+   const sydney = {lat: -33.857, lng: 151.215};
+   const map = new google.maps.Map(document.getElementById('map'), {zoom: 4, center: sydney});
+   const marker = new google.maps.Marker({position: sydney, map: map});
+ }
+
 
 
 
@@ -178,5 +191,33 @@ window.onload = function () {
    }
    //position text
    initTypingEffect();
+
+   //contact form
+   form_name.addEventListener("blur", function(){
+      if (form_name.value!==''){
+         form_name_label.style.display='none'
+      }else{
+         form_name_label.style.display='inline-block'
+      }
+
+   });
+
+   form_email.addEventListener("blur", function(){
+      if (form_email.value!==''){
+         form_email_label.style.display='none'
+      }else{
+         form_email_label.style.display='inline-block'
+      }
+
+   });
+
+   form_message.addEventListener("blur", function(){
+      if (form_message.value!==''){
+         form_message_label.style.display='none'
+      }else{
+         form_message_label.style.display='inline-block'
+      }
+
+   });
  
 }  
