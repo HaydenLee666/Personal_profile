@@ -227,7 +227,7 @@ window.onload = function () {
 
    form_submit.onclick=function(e){
 
-      if(!ePattern.test(form_email.value)){
+      if(!ePattern.test(form_email.value)&&(form_email.value!=='')){
          e.preventDefault();
          form_email_error.style.display='inline-block';
       }else{
