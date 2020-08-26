@@ -250,9 +250,7 @@ window.onload = function () {
       
       
        if(form_message.value!==''&&form_email.value!==''&&form_name.value!==''&&ePattern.test(form_email.value)){
-         form_name.value='';
-         form_email.value='';
-         form_message.value='';
+         
          form_name_label.style.display='inline-block';
          form_email_label.style.display='inline-block';
          form_message_label.style.display='inline-block';
