@@ -19,11 +19,13 @@ const skill_bar_5=document.getElementById('skill-bar-5');
 const skill_bar_6=document.getElementById('skill-bar-6');
 const form_name=document.getElementById('form-name');
 const form_name_label=document.getElementById('form-name-label');
+const form_name_error=document.getElementById('form-name-error');
 const form_email=document.getElementById('form-email');
 const form_email_label=document.getElementById('form-email-label');
 const form_email_error=document.getElementById('form-email-error');
 const form_message=document.getElementById('form-message');
 const form_message_label=document.getElementById('form-message-label');
+const form_message_error=document.getElementById('form-message-error');
 const form_submit=document.getElementById('form-submit');
 //Email regular express
 const ePattern = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
@@ -227,18 +229,34 @@ window.onload = function () {
 
    form_submit.onclick=function(e){
 
-      if(!ePattern.test(form_email.value)&&(form_email.value!=='')){
+      form_email_error.style.display='none';
+      form_name_error.style.display='none';
+      form_message_error.style.display='none';
+
+      if(!ePattern.test(form_email.value)||(form_email.value==='')){
          e.preventDefault();
          form_email_error.style.display='inline-block';
-      }else{
-         //reset
+      }
+
+      if(form_name.value===''){
+         e.preventDefault();
+         form_name_error.style.display='inline-block';
+      }
+
+      if(form_message.value===''){
+         e.preventDefault();
+         form_message_error.style.display='inline-block';
+      }      
+      
+      
+       if(form_message.value!==''&&form_email.value!==''&&form_name.value!==''&&ePattern.test(form_email.value)){
          form_name.value='';
          form_email.value='';
          form_message.value='';
          form_name_label.style.display='inline-block';
          form_email_label.style.display='inline-block';
          form_message_label.style.display='inline-block';
-         form_email_error.style.display='none';
+       
       }
       
       
