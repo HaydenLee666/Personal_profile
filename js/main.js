@@ -21,8 +21,12 @@ const form_name=document.getElementById('form-name');
 const form_name_label=document.getElementById('form-name-label');
 const form_email=document.getElementById('form-email');
 const form_email_label=document.getElementById('form-email-label');
+const form_email_error=document.getElementById('form-email-error');
 const form_message=document.getElementById('form-message');
 const form_message_label=document.getElementById('form-message-label');
+const form_submit=document.getElementById('form-submit');
+//Email regular express
+const ePattern = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 window.onresize=setBackground;
 
 
@@ -115,8 +119,9 @@ function initMap() {
    const marker = new google.maps.Marker({position: sydney, map: map});
  }
 
-
-
+function handleSubmit(){
+   console.log(123)
+}
 
 window.onload = function () {
    setBackground();
@@ -129,7 +134,7 @@ window.onload = function () {
       ease: 'ease-out', //string|function 过渡曲线动画，详见下方说明
       transition: 'flip3d', //string|function转场方式，详见下方说明
       freeze: false, //bool 是否冻结页面（冻结后不可响应用户操作，可以通过 `.freeze(false)` 方法来解冻）
-      mouse: true, //bool 是否启用鼠标拖拽
+      mouse: false, //bool 是否启用鼠标拖拽
       mousewheel: true, //bool 是否启用鼠标滚轮切换
       arrowkey: true, //bool 是否启用键盘方向切换
       autoplay: false, //bool 是否自动播放幻灯 新增
@@ -219,5 +224,24 @@ window.onload = function () {
       }
 
    });
+
+   form_submit.onclick=function(e){
+
+      if(!ePattern.test(form_email.value)){
+         e.preventDefault();
+         form_email_error.style.display='inline-block';
+      }else{
+         //reset
+         form_name.value='';
+         form_email.value='';
+         form_message.value='';
+         form_name_label.style.display='inline-block';
+         form_email_label.style.display='inline-block';
+         form_message_label.style.display='inline-block';
+         form_email_error.style.display='none';
+      }
+      
+      
+   }
  
 }  

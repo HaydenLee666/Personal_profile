@@ -853,7 +853,8 @@ body {
       background-color: #E0F2F1;
       display: flex;
       align-items: center;
-      justify-content: center; }
+      justify-content: center;
+      z-index: 1; }
       .contact__form__group i#message-icon {
         line-height: 5vh;
         align-items: flex-start; }
@@ -935,12 +936,11 @@ body {
     transition: all ease 0.7s; }
     .contact__form__button:hover {
       transform: scale(1.1);
-      background-color: white;
-      color: #00BFA5;
+      background-color: #26A69A;
       box-shadow: 0 2vh 2vh rgba(0, 0, 0, 0.3), 0 2vh 2vh rgba(0, 0, 0, 0.3); }
     .contact__form__button:active {
-      background-color: #00BFA5;
-      color: white;
+      background-color: white;
+      color: #26A69A;
       box-shadow: 0 2vh 2vh rgba(0, 0, 0, 0.5), 0 2vh 2vh rgba(0, 0, 0, 0.5); }
 
 /*# sourceMappingURL=style.css.map */
