@@ -5,6 +5,7 @@ const welcome_title = document.getElementById('welcome-btn');
 const welcome_animation = document.getElementById('welcome-animation');
 const main = document.getElementById('main');
 const main_background_image = document.getElementById('main-background-image');
+const pages_contianer = document.getElementById('pagesContianer');
 const navigation=document.getElementById('navigation');
 const navigation_button=document.getElementById('navigation-button');
 const navigation_title=document.getElementById('navigation-title');
@@ -128,6 +129,7 @@ function handleSubmit(){
 window.onload = function () {
    setBackground();
    reSetNavigationItem();
+   let menuFlag=true;
    const pw = new pageSwitch('pages',{
       duration: 600, //int 页面过渡时间
       direction: 0, //int 页面切换方向，0横向，1纵向
@@ -163,6 +165,14 @@ window.onload = function () {
    //small screen navigation status changed
    navigation_button.onclick=function(){
       navigation.classList.toggle('nav-open');
+      if(menuFlag){
+         main_background_image.style.display='none';
+         pages_contianer.style.display='none';
+      }else{
+         main_background_image.style.display='block';
+         pages_contianer.style.display='flex';
+      }
+      menuFlag=!menuFlag;
      
    };
    //profile button animation

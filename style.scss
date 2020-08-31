@@ -14,13 +14,29 @@ $color-other-page: linear-gradient(306deg, rgba(54, 54, 54, 0.05) 0%, rgba(54, 5
 
 /*media query*/
 // smartphones (landscape view)
-$screen-phone-max: 415px;
+$screen-phone-max: 425px;
 
 // Small tablets (portrait view)
 $screen-tablet-max: 768px;
 
+//large tablets (portrait view)
+$screen-large-tablet-max: 1024px;
+
+$screen-small-laptop-max: 1200px;
+
 @mixin tablet {
     @media (max-width: #{$screen-tablet-max}) {
+        @content;
+    }
+}
+@mixin smallLaptop {
+    @media (max-width: #{$screen-small-laptop-max}) {
+        @content;
+    }
+}
+
+@mixin largeTablet {
+    @media (max-width: #{$screen-large-tablet-max}) {
         @content;
     }
 }
@@ -322,6 +338,10 @@ body {
     animation: backgound-filter 5s infinite;
     width: 100%;
     height: 100%;
+    @include phone{
+        height: 1500px;
+        
+    }
 }
 
 .main__navigation {
@@ -404,7 +424,7 @@ body {
         transition: all 0.5s ease-in-out;
 
         @include tablet {
-            margin: 2rem 0;
+            margin: 1rem 0;
             width: auto;
         }
 
@@ -420,11 +440,11 @@ body {
 
             @include tablet {
                 transform: unset;
-                color: #0091EA;
+                color: #4DB6AC;
                 font-size: 2rem;
 
                 &:before {
-                    background-color: #0091EA;
+                    background-color: #4DB6AC;
                     width: 100%;
                     right: 0%;
                 }
@@ -589,6 +609,13 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    @include tablet{
+        margin-top: 0;
+    }
+    @include phone{
+        height: 1500px;
+
+    }
 }
 
 .pages {
@@ -608,7 +635,7 @@ body {
 
     @include phone {
         height: 85%;
-        margin-top: 20%;
+        margin-top: 0;
     }
 }
 
@@ -637,6 +664,13 @@ body {
             position: relative;
             margin-left: 8%;
             max-width: 32%;
+            @include phone{
+                width: 100%;
+                max-width: none;
+                height: auto;
+                margin-left: 0;
+                text-align: center;
+            }
 
             //padding-left: 10%;
             //margin-top: 10%;
@@ -648,6 +682,14 @@ body {
                 box-shadow: 0 1vh 1vh #E0E0E0;
                 transform: translateY(7vh);
                 transition: box-shadow ease 0.5s,transform ease 0.5s;
+                @include smallLaptop{
+                    height: 200px;
+                    width: 200px;
+                    transform: translateY(30px);
+                }
+                @include phone{
+                    transform: translateY(0px);
+                }
 
                 &:hover {
                     transform: translateY(6vh);
@@ -661,9 +703,12 @@ body {
             width: 60%;
             display: flex;
             flex-wrap: wrap;
-            align-content: space-around;
-            align-items: center;
+            align-content: space-between;
+            //align-items: center;
             text-align: center;
+            @include phone{
+                width: 100%;
+            }
 
             //justify-content: space-evenly;
             &__name {
@@ -673,6 +718,14 @@ body {
                 font-size: 7vh;
                 letter-spacing: -2px;
                 padding: 2vh;
+                @include smallLaptop{
+                    font-size: 2rem;
+                    padding: 1rem;
+                }
+                @include phone{
+                    font-size: 2.5rem;
+                    margin: 20px 0 20px;
+                }
 
                 & span {
                     color: white;
@@ -723,6 +776,15 @@ body {
                 margin-top: 3vh;
                 font-size: 3vh;
                 padding: 2vh;
+                @include smallLaptop{
+                    margin-top: 0;
+                    font-size: 1rem;
+                    padding: 1rem;
+                }
+                @include phone{
+                    font-size: 1rem;
+                    margin: 20px 0 20px;
+                }
 
                 &__txt {
                     border-right: 0.5vh solid white;
@@ -737,12 +799,27 @@ body {
                 display: flex;
                 align-content: center;
                 justify-content: center;
+                @include smallLaptop{
+                    margin-top: 0;
+                    height: 0;
+                    padding:0;
+                }
+                @include phone{
+                    height: auto;
+                    justify-content: space-around;
+                    margin: 20px 0 20px;
+                }
 
                 & a {
                     margin: 0 4vh;
                     color: white;
                     font-size: 5vh;
                     transition: all ease 0.7s;
+
+                    @include smallLaptop{
+                        margin: 0 10px;
+                        font-size: 2rem;
+                    }
 
                     &:hover {
                         color: #0091EA;
@@ -759,6 +836,9 @@ body {
         width: 100%;
         height: 50%;
         align-items: center;
+        @include phone{
+            height: auto;
+        }
 
         &__attachment {
             position: relative;
@@ -768,6 +848,10 @@ body {
             flex-wrap: wrap;
             align-content: space-around;
             align-items: center;
+            @include phone{
+                width: 100%;
+                margin: 20px 0 20px;
+            }
 
             & h3 {
                 margin-top: 5vh;
@@ -781,6 +865,17 @@ body {
                 letter-spacing: 0.3vh;
                 text-align: center;
                 padding-right: 20vh;
+                @include smallLaptop{
+                    font-size: 2rem;
+                    padding-right: 0;
+                }
+                @include tablet{
+                    font-size: 1rem;
+                }
+                @include phone{
+                    font-size: 2rem;
+                    margin: 20px 0 20px;
+                }
             }
 
             & button {
@@ -794,6 +889,9 @@ body {
                 overflow: hidden;
                 transition: all 0.5s ease;
                 padding: 0.25vh 0.25vh;
+                @include phone{
+                    margin: 20px 0 20px;
+                }
 
                 &:hover:before {
                     height: 500%;
@@ -823,6 +921,19 @@ body {
                 transition: all 0.2s ease;
                 color: #00BFA5;
                 position: relative;
+                @include smallLaptop{
+                    width: 300px;
+                    font-size: 1.5rem;
+                }
+                @include tablet{
+                    width: 200px;
+                    font-size: 1rem;
+                }
+                @include phone{
+                    width: 250px;
+                    font-size: 1.5rem;
+        
+                }
 
                 &:hover {
                     color: white;
@@ -845,6 +956,9 @@ body {
 
         #doc-file {
             margin-left: 20vh;
+            @include smallLaptop{
+                margin-left: 0;
+            }
         }
 
         &__description {
@@ -853,19 +967,37 @@ body {
             height: 80%;
             display: flex;
             flex-wrap: wrap;
+            @include phone{
+                width: 100%;
+            }
 
             &__container {
                 margin: 1vh 0;
                 width: 100%;
                 font-size: 3vh;
-
-                //line-height: 2vh;
+                @include smallLaptop{
+                    font-size: 1.3rem;
+                }
+                @include tablet{
+                    font-size: 1rem;
+                }
+                @include phone{
+                    font-size: 1rem;
+                    margin: 20px 0 20px;
+                    padding: 0 10px;
+                }
            
             }
 
             &__left {
                 display: inline-block;
                 min-width: 30%;
+                @include largeTablet{
+                    min-width: 25%;
+                }
+                @include phone{
+                    min-width: 26%;
+                }
             }
 
             &__right {
@@ -891,6 +1023,9 @@ body {
         & span {
             font-size: 5vh;
             color: white;
+            @include phone{
+                font-size: 2.5rem;
+            }
         }
     }
 
@@ -903,17 +1038,33 @@ body {
 
     &__container {
         width: 46%;
-        margin-top: 3vh;
+        //margin-top: 3vh;
         padding: 0 2%;
+        @include phone{
+            width: 98%;
+            margin: 10px 0 20px;
+        }
 
         &__title h3 {
             font-size: 4vh;
             margin: 1vh 0 3vh;
+            @include largeTablet{
+                font-size: 2rem;
+                margin: 10px 0 20px;
+            }
+            @include tablet{
+                font-size: 1.5rem;
+                margin: 5px 0 5px;
+            }
+            @include phone{
+                font-size: 2rem;
+                margin: 10px 0 20px;
+            }
         }
     }
 
     &__timeline {
-        padding: 2vh 0;
+        padding: 2vh 0 1vh 0;
         border-left: 0.3vh solid #B9F6CA;
 
         &__item {
@@ -924,6 +1075,9 @@ body {
             background-color: white;
             border-left: 0.3vh solid #00BFA5;
             box-shadow: 0 0 1vh 0 #B2DFDB;
+            @include phone{
+                margin-bottom: 25px;
+            }
 
             &:hover {
                 box-shadow: 0 0 2.5vh 0 #B2DFDB;
@@ -963,6 +1117,18 @@ body {
                 margin: 0 0 1vh;
                 font-size: 2.5vh;
                 line-height: 3vh;
+                @include largeTablet{
+                    font-size: 1.3rem;
+                }
+                @include tablet{
+                    font-size: 1rem;
+                    margin: 0;
+                }
+                @include phone{
+                    font-size: 1.2rem;
+                    margin: 10px 0 5px;
+                    line-height: 1.5rem;
+                }
             }
 
             &__time {
@@ -971,6 +1137,20 @@ body {
                 line-height: 3vh;
                 color: #00BFA5;
                 margin-bottom: 1vh;
+                @include largeTablet{
+                    font-size: 1rem;
+                    line-height: 1.1rem;
+                }
+                @include tablet{
+                    font-size: 0.7rem;
+                    line-height: 0.8rem;
+                }
+                @include phone{
+                    font-size: 0.8rem;
+                    line-height: 1rem;
+                    margin-bottom: 5px;
+                }
+
             }
 
             &__place {
@@ -982,12 +1162,34 @@ body {
                 margin-bottom: 1vh;
                 padding-left: 1vh;
                 border-left: 0.3vh solid #B9F6CA;
+                @include largeTablet{
+                    font-size: 0.7rem;
+                    line-height: 0.8rem;
+                }
+                @include tablet{
+                    font-size: 0.7rem;
+                    line-height: 0.8rem;
+                }
+                @include phone{
+                    font-size: 0.8rem;
+                    line-height: 1rem;
+                    margin-bottom: 5px;
+                }
             }
 
             &__description {
                 font-size: 2vh;
                 margin: 0 0 1vh;
                 font-weight: bolder;
+                @include largeTablet{
+                    font-size:0.95rem;
+                }
+                @include tablet{
+                    font-size:0.6rem;
+                }
+                @include phone{
+                    font-size:0.7rem;
+                }
             }
         }
     }
@@ -1009,6 +1211,9 @@ body {
         & span {
             font-size: 5vh;
             color: white;
+            @include phone{
+                font-size: 2.5rem;
+            }
         }
     }
 
@@ -1027,6 +1232,23 @@ body {
         font-weight: 600;
         line-height: 4.5vh;
         padding: 0 5vh;
+        @include largeTablet{
+            font-size: 2rem;
+            margin: 10px 0 40px;
+            line-height: 0;
+            padding: 0;
+        }
+        @include tablet{
+            font-size: 1.5rem;
+            margin: 10px 0 30px;
+        }
+
+        @include largeTablet{
+            font-size: 2rem;
+            margin: 10px 0 40px;
+            line-height: 2.3rem;
+            padding: 0;
+        }
 
         & span {
             color: #00BFA5;
@@ -1043,6 +1265,10 @@ body {
     &__service {
         text-align: center;
         width: 20%;
+        @include phone{
+            width: 46%;
+            margin-bottom: 20px;
+        }
 
         &__image {
             width: 15vh;
@@ -1056,15 +1282,35 @@ body {
             justify-content: center;
             align-items: center;
             transition: transform ease 0.5s;
+            @include largeTablet{
+                width: 150px;
+                height: 150px;
+                border-radius: 150px;
+            }
+            @include tablet{
+                width: 75px;
+                height: 75px;
+                border-radius: 75px;
+            }
 
             &:hover {
                 box-shadow: 0 0 5vh #1DE9B6;
                 transform: scale(1.2);
+               
             }
 
             & img {
                 width: 10vh;
                 height: 10vh;
+                @include largeTablet{
+                    width: 100px;
+                    height: 100px;
+                }
+                @include tablet{
+                    width: 50px;
+                    height: 50px;
+                }
+                
             }
         }
 
@@ -1073,21 +1319,58 @@ body {
             margin-top: 2.5vh;
             margin-bottom: 2vh;
             font-weight: bold;
+            @include largeTablet{
+                font-size: 1.5rem;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            @include tablet{
+                font-size: 1rem;
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+            @include phone{
+                font-size: 1.3rem;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
         }
 
         &__description {
             font-size: 1.8vh;
             font-weight: bolder;
+            @include largeTablet{
+                font-size: 1rem;
+            }
+            @include tablet{
+                font-size: 0.7rem;
+            }
+            @include phone{
+                font-size: 0.85rem;
+            }
         }
     }
 
     &__bars {
         width: 46%;
         padding: 0 2%;
+        @include phone{
+            width: 100%;
+            padding: 0;
+        }
 
         &__name {
             font-weight: bolder;
             font-size: 2.3vh;
+            @include largeTablet{
+                font-size: 1.5rem;
+            }
+            @include tablet{
+                font-size: 1rem;
+            }
+            @include phone{
+                line-height: 1.5rem;
+            }
         }
 
         &__bar {
@@ -1096,6 +1379,10 @@ body {
             height: 1vh;
             background-color: #c4fdef;
             border: 0.3vh solid #E0F2F1;
+            @include phone{
+                height: 13px;
+                margin-bottom: 15px;
+            }
         }
 
         &__percentage {
@@ -1122,6 +1409,9 @@ body {
         & span {
             font-size: 5vh;
             color: white;
+            @include phone{
+                font-size: 2.5rem;
+            }
         }
     }
 }
@@ -1142,6 +1432,9 @@ body {
         & span {
             font-size: 5vh;
             color: white;
+            @include phone{
+                font-size: 2.5rem;
+            }
         }
     }
 
@@ -1155,6 +1448,10 @@ body {
     &__container {
         width: 46%;
         padding: 0 2%;
+        @include phone{
+            width: 100%;
+            margin-bottom: 30px;
+        }
     }
 
     &__heading {
@@ -1163,6 +1460,21 @@ body {
         margin: 1vh 0 4vh;
         font-weight: 600;
         line-height: 4.5vh;
+        @include largeTablet{
+            font-size: 2rem;
+            margin: 10px 0 40px;
+            line-height: 2rem;
+        }
+        @include tablet{
+            font-size: 1.5rem;
+            margin: 10px 0 20px;
+            line-height: 1.5rem;
+        }
+
+        @include phone(){
+            font-size: 2rem;
+            line-height: 2rem;
+        }
 
         & span {
             color: #00BFA5;
@@ -1175,6 +1487,14 @@ body {
         border: #00BFA5 solid 0.3vh;
         border-radius: 1vh;
         margin-bottom: 3vh;
+        @include tablet{
+            height: 150px;
+            margin-bottom: 15px;
+        }
+        @include phone{
+            height: 200px;
+            width: 100%;
+        }
     }
 
     &__info {
@@ -1184,6 +1504,9 @@ body {
         display: block;
         margin: 0;
         padding: 1vh 0 1vh;
+        @include phone{
+            padding: 15px 0 15px;
+        }
 
         &__icon {
             position: absolute;
@@ -1210,6 +1533,15 @@ body {
             font-size: 2.3vh;
             line-height: 4vh;
             font-weight: bolder;
+            @include largeTablet{
+                font-size: 1.4rem;
+            }
+            @include tablet{
+                font-size: 1rem;
+            }
+            @include phone{
+                font-size: 1.2rem;
+            }
         }
     }
 
@@ -1340,6 +1672,14 @@ body {
             outline: none;
             border-radius: 1vh;
             transition: all ease 0.7s;
+            @include tablet{
+                margin-top: 0;
+                line-height: 30px;
+            }
+            @include phone(){
+                margin-top: 30px;
+                line-height: 40px;
+            }
             &:hover{
                 transform:scale(1.1);
                 background-color:#26A69A;
