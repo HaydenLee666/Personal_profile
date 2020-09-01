@@ -206,7 +206,7 @@ body {
     background-size: 200%,200%;
     height: 100vh;
     animation: welcome-background 13s ease-in-out infinite;
-    display: none; //should change to block before deploy
+    display: block; //should change to block before deploy
 
     &__title {
         width: 100%;
@@ -327,7 +327,7 @@ body {
 }
 
 .main {
-    //display: none;
+    display: none;//should change to block before deploy
     height: 100vh;
 }
 
@@ -502,6 +502,7 @@ body {
             right: 1rem;
             z-index: 9;
             border-radius: 5px;
+            border: #00BFA5 solid 2px;
             cursor: pointer;
             background-color: white;
 
@@ -1234,7 +1235,7 @@ body {
         padding: 0 5vh;
         @include largeTablet{
             font-size: 2rem;
-            margin: 10px 0 40px;
+            margin: 10px 0 30px;
             line-height: 0;
             padding: 0;
         }
@@ -1243,7 +1244,7 @@ body {
             margin: 10px 0 30px;
         }
 
-        @include largeTablet{
+        @include phone{
             font-size: 2rem;
             margin: 10px 0 40px;
             line-height: 2.3rem;
@@ -1283,9 +1284,9 @@ body {
             align-items: center;
             transition: transform ease 0.5s;
             @include largeTablet{
-                width: 150px;
-                height: 150px;
-                border-radius: 150px;
+                width: 130px;
+                height: 130px;
+                border-radius: 130px;
             }
             @include tablet{
                 width: 75px;
@@ -1303,8 +1304,8 @@ body {
                 width: 10vh;
                 height: 10vh;
                 @include largeTablet{
-                    width: 100px;
-                    height: 100px;
+                    width: 80px;
+                    height: 80px;
                 }
                 @include tablet{
                     width: 50px;
@@ -1320,7 +1321,7 @@ body {
             margin-bottom: 2vh;
             font-weight: bold;
             @include largeTablet{
-                font-size: 1.5rem;
+                font-size: 1.3rem;
                 margin-top: 10px;
                 margin-bottom: 10px;
             }
@@ -1340,7 +1341,7 @@ body {
             font-size: 1.8vh;
             font-weight: bolder;
             @include largeTablet{
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
             @include tablet{
                 font-size: 0.7rem;
@@ -1363,7 +1364,7 @@ body {
             font-weight: bolder;
             font-size: 2.3vh;
             @include largeTablet{
-                font-size: 1.5rem;
+                font-size: 1.2rem;
             }
             @include tablet{
                 font-size: 1rem;
