@@ -1,2 +1,2 @@
-# Personal_profile
+# Personal Profile
 [Demo](https://haydenlee.top)
